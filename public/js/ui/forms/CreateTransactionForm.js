@@ -1,31 +1,43 @@
-/**
- * Класс CreateTransactionForm управляет формой
- * создания новой транзакции
- * */
-class CreateTransactionForm extends AsyncForm {
+// public/js/ui/widgets/TransactionsWidget.js
+
+import { App } from '../../App.js';
+
+export class TransactionsWidget {
   /**
-   * Вызывает родительский конструктор и
-   * метод renderAccountsList
-   * */
+   * @param {HTMLElement} element - Контейнер с кнопками (div.transactions-panel)
+   */
   constructor(element) {
-    super(element)
+    if (!element) {
+      throw new Error('Элемент виджета TransactionsWidget не передан');
+    }
+
+    this.element = element;
+    this.registerEvents();
   }
 
   /**
-   * Получает список счетов с помощью Account.list
-   * Обновляет в форме всплывающего окна выпадающий список
-   * */
-  renderAccountsList() {
+   * Устанавливает обработчики нажатия на кнопки "Доход" и "Расход".
+   */
+  registerEvents() {
+    const incomeBtn = this.element.querySelector('.create-income-button');
+    const expenseBtn = this.element.querySelector('.create-expense-button');
 
-  }
+    // Кнопка "Доход"
+    if (incomeBtn) {
+      incomeBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const modal = App.getModal('newIncome');
+        if (modal) modal.open();
+      });
+    }
 
-  /**
-   * Создаёт новую транзакцию (доход или расход)
-   * с помощью Transaction.create. По успешному результату
-   * вызывает App.update(), сбрасывает форму и закрывает окно,
-   * в котором находится форма
-   * */
-  onSubmit(data) {
-
+    // Кнопка "Расход"
+    if (expenseBtn) {
+      expenseBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const modal = App.getModal('newExpense');
+        if (modal) modal.open();
+      });
+    }
   }
 }
