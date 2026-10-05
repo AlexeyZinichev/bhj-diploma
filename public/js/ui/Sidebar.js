@@ -1,7 +1,4 @@
-import { App } from '../App.js';
-import { User } from '../api/User.js';
-
-export class Sidebar {
+class Sidebar {
    /**
    * Регистрирует обработчики событий для ссылок 
    * "Регистрация", "Войти" и "Выйти" в боковом меню.

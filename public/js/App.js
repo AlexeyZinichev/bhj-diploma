@@ -208,3 +208,6 @@ class App {
     this.getForm("createExpense").renderAccountsList();
   }
 }
+
+window.App = App;
+

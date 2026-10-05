@@ -1,8 +1,4 @@
-// public/js/ui/widgets/TransactionsWidget.js
-
-import { App } from '../../App.js';
-
-export class TransactionsWidget {
+class TransactionsWidget {
   /**
    * @param {HTMLElement} element - Контейнер с кнопками (div.transactions-panel)
    */
@@ -41,3 +37,5 @@ export class TransactionsWidget {
     }
   }
 }
+
+window.TransactionsWidget = TransactionsWidget;

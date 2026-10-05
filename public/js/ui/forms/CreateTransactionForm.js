@@ -1,11 +1,4 @@
-// public/js/ui/forms/CreateTransactionForm.js
-
-import { AsyncForm } from './AsyncForm.js';
-import { Transaction } from '../api/Transaction.js';
-import { Account } from '../api/Account.js';
-import { App } from '../../App.js';
-
-export class CreateTransactionForm extends AsyncForm {
+class CreateTransactionForm extends AsyncForm {
   /**
    * @param {HTMLFormElement} element - Элемент формы (#new-income-form или #new-expense-form)
    */
@@ -85,3 +78,5 @@ export class CreateTransactionForm extends AsyncForm {
     });
   }
 }
+
+window.CreateTransactionForm = CreateTransactionForm;

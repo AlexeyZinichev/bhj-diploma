@@ -1,4 +1,4 @@
-export const createRequest = (options) => {
+const createRequest = (options) => {
   const {
     url,
     method = 'GET',
@@ -50,3 +50,5 @@ export const createRequest = (options) => {
     callback(e, null);
   }
 };
+
+window.createRequest = createRequest;

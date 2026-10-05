@@ -1,10 +1,4 @@
-// public/js/ui/pages/TransactionsPage.js
-
-import { Account } from '../api/Account.js';
-import { Transaction } from '../api/Transaction.js';
-import { App } from '../../App.js';
-
-export class TransactionsPage {
+class TransactionsPage {
   /**
    * @param {HTMLElement} element - Контейнер страницы (div.content-wrapper)
    */
@@ -218,3 +212,5 @@ export class TransactionsPage {
     });
   }
 }
+
+window.TransactionsPage = TransactionsPage;

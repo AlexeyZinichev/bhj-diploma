@@ -1,6 +1,4 @@
-// public/js/ui/forms/AsyncForm.js
-
-export class AsyncForm {
+class AsyncForm {
   /**
    * @param {HTMLFormElement} element - DOM-элемент формы
    */
@@ -66,3 +64,5 @@ export class AsyncForm {
     this.onSubmit(data);
   }
 }
+
+window.AsyncForm = AsyncForm;

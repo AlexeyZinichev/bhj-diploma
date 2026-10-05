@@ -1,6 +1,4 @@
-import { createRequest } from './createRequest.js';
-
-export class Entity {
+class Entity {
   static URL = '';
 
   static list(data, callback) {
@@ -30,3 +28,5 @@ export class Entity {
     });
   }
 }
+
+window.Entity = Entity;

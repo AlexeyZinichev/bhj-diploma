@@ -1,6 +1,4 @@
-import { createRequest } from './createRequest.js';
-
-export class User {
+class User {
   static URL = '/user';
 
   static setCurrent(user) {
@@ -74,3 +72,5 @@ export class User {
     });
   }
 }
+
+window.User = User;

@@ -1,10 +1,4 @@
-// public/js/ui/forms/RegisterForm.js
-
-import { AsyncForm } from './AsyncForm.js';
-import { User } from '../api/User.js';
-import { App } from '../../App.js';
-
-export class RegisterForm extends AsyncForm {
+class RegisterForm extends AsyncForm {
   /**
    * Обрабатывает данные формы регистрации.
    * @param {Object} data - Объект с данными формы { name, email, password }
@@ -42,3 +36,5 @@ export class RegisterForm extends AsyncForm {
     });
   }
 }
+
+window.RegisterForm = RegisterForm;

@@ -26,3 +26,5 @@ class UserWidget {
 
   }
 }
+
+window.UserWidget = UserWidget;

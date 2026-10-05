@@ -1,10 +1,4 @@
-// public/js/ui/forms/CreateAccountForm.js
-
-import { AsyncForm } from './AsyncForm.js';
-import { Account } from '../api/Account.js';
-import { App } from '../../App.js';
-
-export class CreateAccountForm extends AsyncForm {
+class CreateAccountForm extends AsyncForm {
   /**
    * Обрабатывает данные формы создания счета.
    * @param {Object} data - Объект с данными формы { name }
@@ -34,3 +28,5 @@ export class CreateAccountForm extends AsyncForm {
     });
   }
 }
+
+window.CreateAccountForm = CreateAccountForm;

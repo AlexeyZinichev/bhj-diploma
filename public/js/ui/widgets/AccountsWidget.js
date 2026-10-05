@@ -1,10 +1,4 @@
-// public/js/ui/widgets/AccountsWidget.js
-
-import { Account } from '../api/Account.js';
-import { User } from '../api/User.js';
-import { App } from '../../App.js';
-
-export class AccountsWidget {
+class AccountsWidget {
   /**
    * @param {HTMLElement} element - DOM-элемент боковой панели счетов
    */
@@ -135,3 +129,5 @@ export class AccountsWidget {
     });
   }
 }
+
+window.AccountsWidget = AccountsWidget;

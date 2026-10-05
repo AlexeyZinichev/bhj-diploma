@@ -1,10 +1,4 @@
-// public/js/ui/forms/LoginForm.js
-
-import { AsyncForm } from './AsyncForm.js';
-import { User } from '../api/User.js';
-import { App } from '../../App.js';
-
-export class LoginForm extends AsyncForm {
+class LoginForm extends AsyncForm {
   /**
    * Обрабатывает данные формы входа.
    * @param {Object} data - Объект с данными формы { email, password }
@@ -42,3 +36,5 @@ export class LoginForm extends AsyncForm {
     });
   }
 }
+
+window.LoginForm = LoginForm;

@@ -1,6 +1,4 @@
-// public/js/ui/Modal.js
-
-export class Modal {
+class Modal {
   /**
    * @param {HTMLElement} element - DOM-элемент всплывающего окна
    */
@@ -71,3 +69,5 @@ export class Modal {
     });
   }
 }
+
+window.Modal = Modal;
