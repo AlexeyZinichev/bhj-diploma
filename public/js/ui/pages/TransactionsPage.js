@@ -1,3 +1,7 @@
+/**
+ * Класс TransactionsPage отвечает за единственную страницу приложения.
+ * Отображает список транзакций, позволяет удалять счета и операции.
+ */
 class TransactionsPage {
   /**
    * @param {HTMLElement} element - Контейнер страницы (div.content-wrapper)
@@ -78,11 +82,13 @@ class TransactionsPage {
 
     Account.remove({ id: this.lastOptions.account_id }, (err, response) => {
       if (err || !response.success) return;
-      
-      // После удаления счета обновляем виджеты (где счета пересчитаются)
-      // и формы (чтобы счет исчез из выпадающего списка)
-      App.updateWidgets();
-      App.updateForms();
+
+      // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ 1: 
+      // Очищаем страницу от старого названия и транзакций
+      this.clear(); 
+
+      // Обновляем виджеты (сайдбар) и формы
+      App.update(); 
     });
   }
 
@@ -97,9 +103,10 @@ class TransactionsPage {
 
     Transaction.remove({ id: id }, (err, response) => {
       if (err || !response.success) return;
-      
-      // Обновляем текущую страницу, чтобы транзакция исчезла из списка
-      this.update();
+
+      // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ 2:
+      // Вызываем полное обновление приложения, чтобы пересчитался баланс в сайдбаре
+      App.update(); 
     });
   }
 
@@ -213,4 +220,5 @@ class TransactionsPage {
   }
 }
 
+// Экспортируем класс в глобальную область видимости для App.js
 window.TransactionsPage = TransactionsPage;
